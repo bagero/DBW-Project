@@ -1,0 +1,11 @@
+<div class="container">
+    <% if(agente.username){ %>
+    <h2>Welcome <%= agente.username%></h2>
+    <% } %>
+        <%else <h2>Welcome</h2>%>
+    <div class="panel panel-default">
+        <div class="panel-body">Most Frequently Asked Question</div>
+        <div class="panel-body">Question:<%= faqData.question%></div>
+        <div class="panel-body">Answer:<%= faqData.answer%></div>
+    </div>
+</div>

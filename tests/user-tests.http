@@ -1,0 +1,158 @@
+
+### Create FAQ
+POST http://localhost:3000/faq
+Content-Type: application/json
+
+{
+  "question": "???",
+  "answer": "123"
+}
+
+###Create Ticket
+POST http://localhost:3000/ticket
+Content-Type: application/json
+
+{
+ "email": "awd@awd.com",
+  "subject": "DAWDAWD",
+  "faq":"6274fc926b24b92e5c645c80",
+  "agente": "6274ff544b8a650a006a2fc8",
+  "state": "unsolved"
+}
+###Create Solved another Ticket
+POST http://localhost:3000/ticket
+Content-Type: application/json
+
+{
+"email": "tttttt@gmail.com",
+"subject": "sdsdssd",
+"faq":"6274fc926b24b92e5c645c80",
+"agente": "6274ff544b8a650a006a2fc8",
+"state": "solved"
+}
+
+###Create Solved yet another Ticket
+POST http://localhost:3000/ticket
+Content-Type: application/json
+
+{
+  "email": "blablalba",
+  "subject": "34234234",
+  "faq":"6274fc926b24b92e5c645c80",
+  "agente": "6274ff544b8a650a006a2fc8",
+  "state": "sharedpool"
+}
+
+### Get ticket by id
+
+GET http://localhost:3000/ticket/6274ff544b8a650a006a2fc8/unsolved
+
+
+### Get unsolvedtickets
+
+GET http://localhost:3000/users/6274ff544b8a650a006a2fc8/ticket
+Accept: application/json
+
+### User without a tutor #2
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "username": "Tutorless",
+  "password": "#2"
+
+}
+
+### User with chained tutor #1 - Change ObjectId appropriatelly
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Tutored",
+  "lastName": "#1",
+  "tutor": "609e620947f3213c447256cd"
+}
+
+### User with chained tutor #2 - Change ObjectId appropriatelly
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Tutored",
+  "lastName": "#2",
+  "tutor": "609e620947f3213c447256cd"
+}
+
+### User with chained tutor #3 - Change ObjectId appropriatelly
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Tutored",
+  "lastName": "#3",
+  "tutor": "609e620747f3213c447256cc"
+}
+
+### User with chained tutor #4 - Another level - Change ObjectId appropriatelly
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Tutored",
+  "lastName": "#4",
+  "tutor": "609e622b47f3213c447256d0"
+}
+
+### Get tickets from agent
+
+POST http://localhost:3000/faq/inserefaq
+Content-Type: application/json
+
+{
+  "category": "1234556",
+  "question": "omeudeus",
+  "answer": "alahu"
+}
+###
+GET http://localhost:3000/faq/updatepin/6283b64840869e0a54f6ae94
+Accept: application/json
+
+###
+
+###
+GET http://localhost:3000/faq/pinnedfaq
+Accept: application/json
+
+###
+
+POST http://localhost:3000/faq/deletefaq/6283b62f40869e0a54f6ae91
+
+
+###
+PATCH http://localhost:3000/ticket/627e6f46f57c1e56dc99724a
+Content-Type: application/json
+
+{
+  "agente": "627b9972ac3f1a5ec8b5c379",
+  "state": "unsolved"
+}
+
+###
+PATCH http://localhost:3000/faq/editfaq/6283b64840869e0a54f6ae94
+Content-Type: application/json
+
+{
+  "category":"mudou",
+  "question": "será?",
+  "answer": "yeap"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "username": "Tutorless",
+  "password": "#2"
+}
+
